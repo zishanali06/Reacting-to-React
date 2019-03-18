@@ -1,3 +1,7 @@
+## My project Goals
+
+Learn and understand how react works and how to properly use its components
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
