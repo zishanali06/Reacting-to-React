@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 
 ReactDOM.render(
-    <App step2test='Well I already love react!' />,
+    <App textcontent='This is so COOL!!!!' />,
     document.getElementById('root')
 );
 
