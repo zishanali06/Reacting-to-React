@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 
+
 // let App = (props) => {
 //     return (
 //         <h1>{props.step2test}</h1>
@@ -31,21 +32,30 @@ class App extends Component {
     }
 
     togglehasLoaded() {
-        console.log(this);
         this.setState({ hasLoaded: true });
-        console.log(this.state.hasLoaded);
-    } 
+    }
+
+    //THIS METHOD WILL RUN ONCE ReactDOM is Rendered(Mounted), if it is Rendered
+    componentDidMount() {
+        this.setState({ hasLoaded: true });
+    }
 
     render() {
-        console.log('Inside Render of App class');
-        return (
-            <React.Fragment>
-                <h1>{`${this.text}${this.state.text}`}</h1>
-                <h2>{this.state.text}</h2>
-                <input type="text" placeholder={this.state.text} onChange={(e) => this.handleonChange(e)} />
-                <button onClick={this.togglehasLoaded}>Click Me</button>
-            </React.Fragment>
-        );
+        if (this.state.hasLoaded === true) {
+            return (
+                <React.Fragment>
+                    <h1>{`${this.text}${this.state.text}`}</h1>
+                    <h2>{this.state.text}</h2>
+                    <input type="text" placeholder={this.state.text} onChange={(e) => this.handleonChange(e)} />
+                    <button onClick={this.togglehasLoaded}>Click Me</button>
+                </React.Fragment>
+            );
+        } else {
+            return (
+                <React.Fragment><h1>Loading...</h1>
+                    <button onClick={this.togglehasLoaded}>Click Me</button></React.Fragment>
+            );
+        };
     };
 }
 
