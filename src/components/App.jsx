@@ -37,7 +37,7 @@ class App extends Component {
 
     //THIS METHOD WILL RUN ONCE ReactDOM is Rendered(Mounted), if it is Rendered
     componentDidMount() {
-        this.setState({ hasLoaded: true });
+        this.setState({ hasLoaded: false });
     }
 
     render() {
